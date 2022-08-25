@@ -4,24 +4,24 @@
   box-sizing: border-box;
 }
 
-.root {
-  --hue: 300;
+:root {
+  --hue: 200;
   --saturation: 50%;
-  --foreground-color: hsl(var(--hue), (var(--saturation), 75%));
-  --background-color: hsl(var(--hue), (var(--saturation), 20%));
+  --foreground-color: hsl(var(--hue), var(--saturation), 75%);
+  --background-color: hsl(var(--hue), var(--saturation), 20%);
 }
 
 body {
   margin: 0;
   background-color: var(--background-color);
-  background-color: #334;
 }
 
 .paddle {
   --position: 50;
+
   position: absolute;
-  background-color: white;
-  top: calc(var(--position50vh) * 1vh);
+  background-color: var(--foreground-color);
+  top: calc(var(--position) * 1vh);
   transform: translateY(-50%);
   width: 1vh;
   height: 10vh;
@@ -36,8 +36,9 @@ body {
 .ball {
   --x: 50;
   --y: 50;
+
   position: absolute;
-  background-color: car(--foreground-color);
+  background-color: var(--foreground-color);
   left: calc(car(--x) * 1vw);
   top: calc(var(--y) * 1vh);
   border-radius: 50%;
